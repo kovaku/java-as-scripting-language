@@ -1,10 +1,10 @@
-### JavaAsSriptingLanguage
+## JavaAsSriptingLanguage
 ```
 docker build . -t fiboapp
 docker run fiboapp <nth fibonacci number>
 ```
 
-# Example output:
+##### Example output:
 ```
 > docker run fiboapp 12
 0
@@ -21,7 +21,7 @@ docker run fiboapp <nth fibonacci number>
 89
 ```
 
-# Notes
+##### Notes
 * Script file should start with a shebang (#!) pointing to java
 * Java source level is mandatory, use `--source <java_level>` to set
 * Script file could contain more class, but the first should contain the main method
