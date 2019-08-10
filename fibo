@@ -1,0 +1,31 @@
+#!/opt/openjdk-12/bin/java --source 11
+import static java.lang.System.exit;
+import static java.lang.System.out;
+
+import java.util.Objects;
+import java.util.stream.IntStream;
+
+public class App {
+    public static void main(String[] args) {
+        if (Objects.nonNull(args) && args.length != 0) {
+			Fibonacci fibonacci = new Fibonacci();
+            IntStream.range(0, Integer.parseInt(args[0]))
+                .map(fibonacci::getFibonacci)
+                .forEach(out::println);
+        } else {
+            out.println("Invalid number of arguments! Exiting...");
+            exit(1);
+        }
+    }
+}
+
+public class Fibonacci {
+    public int getFibonacci(int order) {
+        if (order == 0) {
+            return 0;
+        } else if (order == 1) {
+            return 1;
+        }
+        return getFibonacci(order - 2) + getFibonacci(order - 1);
+    }
+}
