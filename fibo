@@ -7,7 +7,7 @@ import java.util.stream.IntStream;
 
 public class App {
     public static void main(String[] args) {
-        if (Objects.nonNull(args) && args.length != 0) {
+        if (Objects.nonNull(args) && args.length == 1) {
 			Fibonacci fibonacci = new Fibonacci();
             IntStream.range(0, Integer.parseInt(args[0]))
                 .map(fibonacci::getFibonacci)
