@@ -18,7 +18,8 @@ public class App {
                 exit(1);
             }
         } catch (NumberFormatException e) {
-            out.println("The input should be an integer!");
+            out.println("The input should be an integer! Exiting...");
+            exit(1);
         }
     }
 }
