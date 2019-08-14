@@ -7,13 +7,18 @@ import java.util.stream.IntStream;
 
 public class App {
     public static void main(String[] args) {
-        if (Objects.nonNull(args) && args.length == 1) {
-			Fibonacci fibonacci = new Fibonacci();
-            IntStream.range(0, Integer.parseInt(args[0]))
-                .map(fibonacci::getFibonacci)
-                .forEach(out::println);
-        } else {
-            out.println("Invalid number of arguments! Exiting...");
+        try {
+            if (Objects.nonNull(args) && args.length == 1 && Integer.parseInt(args[0]) > 0) {
+                Fibonacci fibonacci = new Fibonacci();
+                IntStream.range(0, Integer.parseInt(args[0]))
+                        .map(fibonacci::getFibonacci)
+                        .forEach(out::println);
+            } else {
+                out.println("The value should be a single, positive number! Exiting...");
+                exit(1);
+            }
+        } catch (NumberFormatException e) {
+            out.println("The input should be an integer! Exiting...");
             exit(1);
         }
     }
