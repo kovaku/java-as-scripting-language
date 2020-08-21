@@ -1,4 +1,5 @@
-## JavaAsSriptingLanguage
+## Java as sripting language
+Trying out java as a scripting language
 ```
 docker build . -t fiboapp
 docker run fiboapp <nth fibonacci number>
